@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
 
@@ -15,54 +15,101 @@
 </head>
 
 <body>
-    
-    <main>
-        <section>
+
+    <main class="opaque_overlay">
+        <section class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <p>Simon Random <br>
-                    <span class="title-footer"> Memory Game</span>
-                    </p>
+                <div class="col-md-12 section_container">
+                    <div class="row">
+                        <div class="col-md-12 title_container">
+                            <h1>Simon Random</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 title_footer_container">
+                            <p>Memory Game</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 instructions_container d-none d-lg-block">
+                            <p>
+                                To play this game you must memorize the sequence in which the buttons flash (there is also a different pitch tone with every button to help this process). This game is based off of the very popular game 'Simon' but with a twist - the sequence is random
+                                every time!<br><br> Press 'Start' to begin the game, if you get the sequence correct the game will automatically move to the next level. If you get it wrong, the game will automatically restart
+                                from the same level, but with a different sequence. <br><br> Press 'Restart' to start back at level '1' with a brand new sequence!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-lg-12 start_restart_container">
+                            <button class="btn-default start_restart_button">Start</button>
+                        </div>
+                        <div class="col-6 d-lg-none rules_container">
+                            <button class="btn-default rules_button" data-toggle='modal' data-target='#rulesModal'>Rules?</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 level_container">
+                            <p>Level '1'</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 round_message_container">
+                            <p>Round Lost / Won message.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 buttons_container_1">
+                            <img src="assets/images/yellow.png" id="yellow_button" class="img_buttons" alt="yellow button image" />
+                            <img src="assets/images/blue.png" id="blue_button" class="img_buttons" alt="blue button image" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 buttons_container_2">
+                            <img src="assets/images/red.png" id="red_button" class="img_buttons" alt="red button image" />
+                            <img src="assets/images/green.png" id="green_button" class="img_buttons" alt="green button image" />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    How to play... <br>
-                    Press 'Start' to... <br>
-                    Press 'Restart' to....
+
+            <!-- Modal -->
+            <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="col-12 modal-title rules_title" id="rulesModal">How To Play</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body rules_text">
+                            <p class="d-none d-sm-block">
+                                To play this game you must memorize the sequence in which the buttons flash (there is also a different pitch tone with every button to help this process). This game is based off of the very popular game 'Simon' but with a twist - the sequence is random
+                                every time!<br><br>
+                                Press 'Start' to begin the game, if you get the sequence correct the game will automatically move to the next level. If you get it wrong, the game will automatically restart
+                                from the same level, but with a different sequence. <br><br>
+                                Press 'Restart' to start back at level '1' with a brand new sequence!
+                            </p>
+                            <p class="d-block d-sm-none">
+                                Remember the sequence and repeat! Random every time.<br><br>
+                                Press 'Start' to begin. <br><br>
+                                Auto-retry if you get it wrong. <br><br>
+                                Press 'Restart' to go back to level '1'.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn modal_close_button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <button class="btn-default">Start</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Level '1'</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Round Lost / Won message.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <img src="assets/images/yellow.png" id="yellow_button" alt="yellow button image" />
-                    <img src="assets/images/blue.png" id="blue_button" alt="blue button image" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <img src="assets/images/red.png" id="red_button" alt="red button image" />
-                    <img src="assets/images/green.png" id="green_button" alt="green button image" />
-                </div>
-            </div>
+            <!-- /modal -->
+
         </section>
     </main>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 

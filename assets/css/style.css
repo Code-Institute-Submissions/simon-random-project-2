@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Exo, sans-serif;
+    font-size: 16px;
+    color: #fff;
+
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.opaque_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.title_container {
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    margin-top: 15px;
+}
+
+.title_footer_container {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.title_container h1 {
+    margin-bottom: 0;
+}
+
+.title_footer_container p {
+    margin-bottom: 10px;
+}
+
+.instructions_container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+
+.start_restart_container {
+    display: flex;
+    justify-content: center;
+}
+
+.rules_container {
+    display: flex;
+    justify-content: center;
+}
+
+.level_container {
+    display: flex;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.round_message_container {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons_container_1 {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons_container_2 {
+    display: flex;
+    justify-content: center;
+}
+
+.img_buttons {
+    width: 40%;
+    margin: 10px;
+    height: 100px;
+}
+
+.start_restart_button {
+    font-size: 34px;
+    border: 4px dashed #fff;
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+}
+
+.start_restart_button:hover,
+.start_restart_button:active,
+.start_restart_button:focus {
+    font-size: 40px;
+}
+
+.rules_button {
+    font-size: 34px;
+    border: 4px dashed #fff;
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+}
+
+.rules_button:hover,
+.rules_button:active,
+.rules_button:focus {
+    font-size: 40px;
+}
+
+/* --------------- Modal -------------- */
+
+.modal-content {
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.rules_title,
+.rules_text {
+    color: #fff;
+    text-align: center;
+}
+
+.modal_close_button {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+
+.modal_close_button:hover {
+    color: #fff;
+}
+
+/* --------------- Media Queries -------------- */
+
+@media (min-width: 576px) {
+    .img_buttons {
+        height: 156px;
+        width: 30%;
+    }
+}
+
+@media (min-width: 1200px) {
+    html,
+    body {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 576px) {
+    .title_footer_container {
+        margin-bottom: 50px;
+    }
+    .level_container {
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+    .round_message_container {
+        margin-bottom: 40px;
+    }
+
+    .start_restart_button {
+        font-size: 45px;
+    }
+
+    .start_restart_button:hover,
+    .start_restart_button:active,
+    .start_restart_button:focus {
+        font-size: 50px;
+    }
+
+    .rules_button {
+        font-size: 45px;
+    }
+
+    .rules_button:hover,
+    .rules_button:active,
+    .rules_button:focus {
+        font-size: 50px;
+    }
+}
