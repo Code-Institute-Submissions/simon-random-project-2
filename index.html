@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- CSS sources -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-
+    <!-- / css sources -->
 
 
     <title>Simon Random</title>
@@ -20,6 +21,8 @@
         <section class="container-fluid">
             <div class="row">
                 <div class="col-md-12 section_container">
+
+                    <!-- Main Page Header -->
                     <div class="row">
                         <div class="col-md-12 title_container">
                             <h1>Simon Random</h1>
@@ -30,6 +33,9 @@
                             <p>Memory Game</p>
                         </div>
                     </div>
+                    <!-- / main page header -->
+
+                    <!-- Game Instructions -->
                     <div class="row">
                         <div class="col-md-12 instructions_container d-none d-lg-block">
                             <p>
@@ -39,6 +45,9 @@
                             </p>
                         </div>
                     </div>
+                    <!-- / game instructions -->
+
+                    <!-- Start/Restart and Rules Buttons -->
                     <div class="row">
                         <div class="col-6 col-lg-12 start_restart_container">
                             <button class="btn-default start_restart_button">Start</button>
@@ -47,16 +56,25 @@
                             <button class="btn-default rules_button" data-toggle='modal' data-target='#rulesModal'>Rules?</button>
                         </div>
                     </div>
+                    <!-- / start/restart and rules buttons -->
+
+                    <!-- Current Level Display -->
                     <div class="row">
                         <div class="col-md-12 level_container">
                             <p>Level '1'</p>
                         </div>
                     </div>
+                    <!-- / current level display -->
+
+                    <!-- Round Won/Lost Message -->
                     <div class="row">
                         <div class="col-md-12 round_message_container">
                             <p>Round Lost / Won message.</p>
                         </div>
                     </div>
+                    <!-- / round won/lost message -->
+
+                    <!-- Game Buttons -->
                     <div class="row">
                         <div class="col-md-12 buttons_container_1">
                             <img src="assets/images/yellow.png" id="yellow_button" class="img_buttons" alt="yellow button image" />
@@ -69,48 +87,47 @@
                             <img src="assets/images/green.png" id="green_button" class="img_buttons" alt="green button image" />
                         </div>
                     </div>
+                    <!-- / game buttons -->
+
                 </div>
             </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="col-12 modal-title rules_title" id="rulesModal">How To Play</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body rules_text">
-                            <p class="d-none d-sm-block">
-                                To play this game you must memorize the sequence in which the buttons flash (there is also a different pitch tone with every button to help this process). This game is based off of the very popular game 'Simon' but with a twist - the sequence is random
-                                every time!<br><br>
-                                Press 'Start' to begin the game, if you get the sequence correct the game will automatically move to the next level. If you get it wrong, the game will automatically restart
-                                from the same level, but with a different sequence. <br><br>
-                                Press 'Restart' to start back at level '1' with a brand new sequence!
-                            </p>
-                            <p class="d-block d-sm-none">
-                                Remember the sequence and repeat! Random every time.<br><br>
-                                Press 'Start' to begin. <br><br>
-                                Auto-retry if you get it wrong. <br><br>
-                                Press 'Restart' to go back to level '1'.
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn modal_close_button" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /modal -->
-
         </section>
     </main>
 
+    <!-- Modal -->
+    <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="col-12 modal-title rules_title" id="rulesModal">How To Play</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+                <div class="modal-body rules_text">
+                    <p class="d-none d-sm-block">
+                        To play this game you must memorize the sequence in which the buttons flash (there is also a different pitch tone with every button to help this process). This game is based off of the very popular game 'Simon' but with a twist - the sequence is random
+                        every time!<br><br> Press 'Start' to begin the game, if you get the sequence correct the game will automatically move to the next level. If you get it wrong, the game will automatically restart from the
+                        same level, but with a different sequence. <br><br> Press 'Restart' to start back at level '1' with a brand new sequence!
+                    </p>
+                    <p class="d-block d-sm-none">
+                        Remember the sequence and repeat! Random every time.<br><br> Press 'Start' to begin. <br><br> Auto-retry if you get it wrong. <br><br> Press 'Restart' to go back to level '1'.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal_close_button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / modal -->
+
+    <!-- Script Sources -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <!-- / script sources -->
+
 </body>
 
 </html>
