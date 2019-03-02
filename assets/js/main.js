@@ -1,8 +1,12 @@
 var buttons = [];
-var imagePath = "assets/images/";
+var sequences = [];
+var level = 1;
+
 
 function button(id, color) {
+    var imagePath = "assets/images/";
     var self = this;
+    
     this.id = id;
     this.color = color;
     this.state = false;
@@ -12,10 +16,11 @@ function button(id, color) {
     });
     this.flash = function() {
         var self = this;
+        
         this.object.src = imagePath + this.color + "_glow.png";
         this.timer = setTimeout(function() {
             self.object.src = imagePath + self.color + ".png";
-        }, 500);
+        }, 400);
     };
     this.pressed = function() {
         if (this.state)
@@ -27,8 +32,19 @@ function button(id, color) {
         this.timer = setTimeout(function() {
             self.object.src = imagePath + self.color + ".png";
             self.state = false;
-        }, 500);
+        }, 400);
+        
     };
+}
+
+function generateSequence() {
+    sequences = [];
+    for (var t = 0; t < level; t++)
+    {
+        sequences.push(Math.random() * 4 | 0);
+    }
+    console.log(sequences);
+    
 }
 
 function flashButton() {
@@ -39,7 +55,9 @@ function flashButton() {
 
 $("#start_button").on("click", function() {
     flashButton();
-    $("#start_button").html("Restart");
+    generateSequence();
+    level++;
+    //$("#start_button").html("Restart");
 });
 
 window.onload = function(e) {
@@ -47,4 +65,7 @@ window.onload = function(e) {
     buttons.push(new button(1, "blue"));
     buttons.push(new button(2, "red"));
     buttons.push(new button(3, "green"));
+
+    
+    
 };
