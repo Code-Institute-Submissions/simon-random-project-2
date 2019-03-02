@@ -1,6 +1,7 @@
 var buttons = [];
 var sequences = [];
 var level = 1;
+var marker = 0;
 
 
 function button(id, color) {
@@ -43,19 +44,22 @@ function generateSequence() {
     {
         sequences.push(Math.random() * 4 | 0);
     }
-    console.log(sequences);
     
 }
 
-function flashButton() {
-    for (var t = 0; t < buttons.length; t++) {
-        buttons[t].flash();
-    }
+function flashSequence() {
+   var choice = sequences[marker];
+   buttons[choice].flash();
+   marker++;
+   
 }
 
+// as level increments, add another flash in sequence.
+// need to choose number in buttons array and match with sequence number
+
 $("#start_button").on("click", function() {
-    flashButton();
     generateSequence();
+    flashSequence();
     level++;
     //$("#start_button").html("Restart");
 });
