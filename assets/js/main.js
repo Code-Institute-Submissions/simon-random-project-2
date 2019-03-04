@@ -4,6 +4,8 @@ var level = 1;
 var marker = 0;
 var sequenceOver = false;
 var gameState = false;
+var allowInput = true;
+
 
 function displayLevel() {
     document.getElementById("level").innerHTML = "Level - '" + level + "'";
@@ -22,6 +24,8 @@ function button(id, color) {
     this.state = false;
     this.object = document.getElementById(color + "_button");
     this.object.addEventListener("click", function() {
+        if (!allowInput)
+            return;
         self.pressed();
     });
     this.flash = function() {
@@ -38,23 +42,29 @@ function button(id, color) {
         }, 400);
     };
     this.pressed = function() {
-        if (this.state || !sequenceOver) {
+        if (this.state || !sequenceOver || marker >= sequences.length) {
             return;
         }
         var self = this;
         
         this.state = true;
         this.object.src = imagePath + this.color + "_glow.png";
+        
+        var sound = document.getElementById("sound" + this.id);
+        sound.play();
+        sound.currentTime = 0;
+        
         this.timer = setTimeout(function() {
             self.object.src = imagePath + self.color + ".png";
             self.state = false;
         }, 400);
         if (sequences[marker] !== this.id) {
             roundOver(false);
-        }
-        marker++
-        if (marker >= sequences.length) {
-            roundOver(true);
+        } else {
+            marker++;
+            if (marker >= sequences.length) {
+                roundOver(true);
+            }
         }
     };
 }
@@ -68,21 +78,23 @@ function generateSequence() {
 }
 
 function flashSequence() {
+   allowInput = false;
    var choice = sequences[marker];
    buttons[choice].flash();
    marker++;
-  if (marker < sequences.length)
-  {
+   if (marker < sequences.length)
+   {
       setTimeout(function() {
           flashSequence();
       }, 1000);
-  } else {
+   } else {
       endSequence();
-  }
+   }
 }
 
 function endSequence() {
     marker = 0;
+    allowInput = true;
     sequenceOver = true;
     displayMessage("Press the buttons in the same order, good luck!");
 }
@@ -125,7 +137,11 @@ function restartGame() {
 }
 
 $("#start_button").on("click", function() {
-    
+    if (!allowInput)
+    {
+        return;
+    }
+    allowInput = false;
     if (gameState === false)
     {
         startGame();
