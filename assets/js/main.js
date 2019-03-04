@@ -1,6 +1,6 @@
 var buttons = [];
 var sequences = [];
-var level = 1;
+var level = 4;
 var marker = 0;
 
 
@@ -51,7 +51,24 @@ function flashSequence() {
    var choice = sequences[marker];
    buttons[choice].flash();
    marker++;
-   
+  if (marker < sequences.length)
+  {
+      setTimeout(function() {
+          flashSequence();
+      }, 1000);
+  } else {
+      marker = 0;
+  }
+}
+
+function roundOver(won) {
+    if (!won) 
+        document.getElementById("message").innerHTML = "Round over friend, try again!";
+    else {
+        document.getElementById("message").innerHTML = "Round won friend, continue to the next round!";
+        level++;
+    }
+    
 }
 
 // as level increments, add another flash in sequence.
@@ -60,7 +77,6 @@ function flashSequence() {
 $("#start_button").on("click", function() {
     generateSequence();
     flashSequence();
-    level++;
     //$("#start_button").html("Restart");
 });
 
