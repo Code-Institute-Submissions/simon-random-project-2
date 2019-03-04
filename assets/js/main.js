@@ -5,6 +5,13 @@ var marker = 0;
 var sequenceOver = false;
 var gameState = false;
 
+function displayLevel() {
+    document.getElementById("level").innerHTML = "Level - '" + level + "'";
+}
+
+function displayMessage(text) {
+    document.getElementById("message").innerHTML = text;
+}
 
 function button(id, color) {
     var imagePath = "assets/images/";
@@ -26,9 +33,10 @@ function button(id, color) {
         }, 400);
     };
     this.pressed = function() {
-        if (this.state)
+        if (this.state) {
             return;
-
+        }
+            
         var self = this;
         this.state = true;
         this.object.src = imagePath + this.color + "_glow.png";
@@ -36,6 +44,10 @@ function button(id, color) {
             self.object.src = imagePath + self.color + ".png";
             self.state = false;
         }, 400);
+        if (sequences[marker] !== this.id) {
+            
+        }
+        
         
     };
 }
@@ -46,7 +58,6 @@ function generateSequence() {
     {
         sequences.push(Math.random() * 4 | 0);
     }
-    
 }
 
 function flashSequence() {
@@ -66,14 +77,14 @@ function flashSequence() {
 function endSequence() {
     marker = 0;
     sequenceOver = true;
-    document.getElementById("message").innerHTML = "Press the buttons in the same order, good luck!";
+    displayMessage("Press the buttons in the same order, good luck!");
 }
 
 function roundOver(won) {
     if (!won) 
-        document.getElementById("message").innerHTML = "Round over friend, try again!";
+        displayMessage("Round over friend, try again!");
     else {
-        document.getElementById("message").innerHTML = "Round won friend, continue to the next round!";
+        displayMessage("Round won friend, continue to the next round!");
         level++;
     }
     
@@ -86,21 +97,21 @@ function roundOver(won) {
 function startGame() {
     generateSequence();
     flashSequence();
-    
 }
 
 function restartGame() {
     marker = 0;
     level = 1;
+    displayLevel(); 
     generateSequence();
     flashSequence();
-    console.log("restart");
 }
 
 $("#start_button").on("click", function() {
     
     if (gameState === false)
     {
+        displayMessage("...");
         startGame();
         $("#start_button").html("Restart");
         gameState = true;
@@ -114,4 +125,6 @@ window.onload = function(e) {
     buttons.push(new button(1, "blue"));
     buttons.push(new button(2, "red"));
     buttons.push(new button(3, "green"));
+    
+    displayLevel();
 };
