@@ -1,7 +1,8 @@
 var buttons = [];
 var sequences = [];
-var level = 4;
+var level = 1;
 var marker = 0;
+var sequenceOver = false;
 
 
 function button(id, color) {
@@ -57,8 +58,14 @@ function flashSequence() {
           flashSequence();
       }, 1000);
   } else {
-      marker = 0;
+      endSequence();
   }
+}
+
+function endSequence() {
+    marker = 0;
+    sequenceOver = true;
+    document.getElementById("message").innerHTML = "Press the buttons in the same order, good luck!";
 }
 
 function roundOver(won) {
