@@ -1,6 +1,6 @@
 var buttons = [];
 var sequences = [];
-var level = 4;
+var level = 1;
 var marker = 0;
 var sequenceOver = false;
 var gameState = false;
@@ -33,11 +33,11 @@ function button(id, color) {
         }, 400);
     };
     this.pressed = function() {
-        if (this.state) {
+        if (this.state || !sequenceOver) {
             return;
         }
-            
         var self = this;
+        
         this.state = true;
         this.object.src = imagePath + this.color + "_glow.png";
         this.timer = setTimeout(function() {
@@ -45,10 +45,12 @@ function button(id, color) {
             self.state = false;
         }, 400);
         if (sequences[marker] !== this.id) {
-            
+            roundOver(false);
         }
-        
-        
+        marker++
+        if (marker >= sequences.length) {
+            roundOver(true);
+        }
     };
 }
 
@@ -81,9 +83,10 @@ function endSequence() {
 }
 
 function roundOver(won) {
-    if (!won) 
+    sequenceOver = false;
+    if (!won) {
         displayMessage("Round over friend, try again!");
-    else {
+    } else {
         displayMessage("Round won friend, continue to the next round!");
         level++;
     }
@@ -95,23 +98,31 @@ function roundOver(won) {
 }
 
 function startGame() {
+    marker = 0;
+    displayLevel();
+    displayMessage("Remember the sequence!")
     generateSequence();
-    flashSequence();
+    setTimeout(function() {
+        flashSequence();    
+    }, 1000);
+    
 }
 
 function restartGame() {
     marker = 0;
     level = 1;
     displayLevel(); 
+    displayMessage("Remember the sequence!")
     generateSequence();
-    flashSequence();
+    setTimeout(function() {
+        flashSequence();    
+    }, 2000);
 }
 
 $("#start_button").on("click", function() {
     
     if (gameState === false)
     {
-        displayMessage("...");
         startGame();
         $("#start_button").html("Restart");
         gameState = true;
