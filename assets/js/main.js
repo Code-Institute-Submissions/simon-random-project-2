@@ -1,8 +1,9 @@
 var buttons = [];
 var sequences = [];
-var level = 1;
+var level = 4;
 var marker = 0;
 var sequenceOver = false;
+var gameState = false;
 
 
 function button(id, color) {
@@ -76,15 +77,36 @@ function roundOver(won) {
         level++;
     }
     
+    setTimeout(function() {
+        startGame();
+    }, 2000);
+    
 }
 
-// as level increments, add another flash in sequence.
-// need to choose number in buttons array and match with sequence number
-
-$("#start_button").on("click", function() {
+function startGame() {
     generateSequence();
     flashSequence();
-    //$("#start_button").html("Restart");
+    
+}
+
+function restartGame() {
+    marker = 0;
+    level = 1;
+    generateSequence();
+    flashSequence();
+    console.log("restart");
+}
+
+$("#start_button").on("click", function() {
+    
+    if (gameState === false)
+    {
+        startGame();
+        $("#start_button").html("Restart");
+        gameState = true;
+    } else {
+        restartGame();
+    }
 });
 
 window.onload = function(e) {
@@ -92,7 +114,4 @@ window.onload = function(e) {
     buttons.push(new button(1, "blue"));
     buttons.push(new button(2, "red"));
     buttons.push(new button(3, "green"));
-
-    
-    
 };
