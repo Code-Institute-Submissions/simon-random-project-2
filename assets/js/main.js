@@ -28,6 +28,11 @@ function button(id, color) {
         var self = this;
         
         this.object.src = imagePath + this.color + "_glow.png";
+        
+        var sound = document.getElementById("sound" + this.id);
+        sound.play();
+        sound.currentTime = 0;
+        
         this.timer = setTimeout(function() {
             self.object.src = imagePath + self.color + ".png";
         }, 400);
@@ -136,6 +141,4 @@ window.onload = function(e) {
     buttons.push(new button(1, "blue"));
     buttons.push(new button(2, "red"));
     buttons.push(new button(3, "green"));
-    
-    displayLevel();
 };
