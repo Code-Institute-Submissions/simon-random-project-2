@@ -150,6 +150,7 @@ $("#start_button").on("click", function() {
     } else {
         restartGame();
     }
+    $(".img_buttons").addClass('cursor_pointer');
 });
 
 window.onload = function(e) {

@@ -7,12 +7,15 @@ body {
     font-family: Exo, sans-serif;
     font-size: 16px;
     color: #fff;
+}
 
-    background: url('../images/background.jpg') no-repeat center center fixed;
+.bg_image {
+     background: url('../images/background.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 100vh;
 }
 
 .opaque_overlay {
@@ -90,6 +93,11 @@ body {
     width: 40%;
     margin: 10px;
     height: 100px;
+    
+}
+
+.cursor_pointer {
+    cursor: pointer;
 }
 
 .start_restart_button {

@@ -16,86 +16,87 @@
 
 <body>
 
-    <main class="opaque_overlay">
-        <section class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 section_container">
 
-                    <!-- Main Page Header -->
-                    <div class="row">
-                        <div class="col-md-12 title_container">
-                            <h1>Simon Random</h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 title_footer_container">
-                            <p>Memory Game</p>
-                        </div>
-                    </div>
-                    <!-- / main page header -->
+    <section class="container-fluid bg_image">
+        <div class="opaque_overlay">&nbsp;</div>
+        <div class="row">
+            <div class="col-md-12 section_container">
 
-                    <!-- Game Instructions -->
-                    <div class="row">
-                        <div class="col-md-12 instructions_container d-none d-lg-block">
-                            <p>
-                                To play this game you must memorize the sequence in which the buttons flash (there is also a different pitch tone with every button to help this process). This game is based off of the very popular game 'Simon' but with a twist - the sequence is random
-                                every time!<br><br> Press 'Start' to begin the game, if you get the sequence correct the game will automatically move to the next level. If you get it wrong, the game will automatically restart
-                                from the same level, but with a different sequence. <br><br> Press 'Restart' to start back at level '1' with a brand new sequence!
-                            </p>
-                        </div>
+                <!-- Main Page Header -->
+                <div class="row">
+                    <div class="col-md-12 title_container">
+                        <h1>Simon Random</h1>
                     </div>
-                    <!-- / game instructions -->
-
-                    <!-- Start/Restart and Rules Buttons -->
-                    <div class="row">
-                        <div class="col-6 col-lg-12 start_restart_container">
-                            <button class="btn-default start_restart_button" id="start_button">Start</button>
-                        </div>
-                        <div class="col-6 d-lg-none rules_container">
-                            <button class="btn-default rules_button" data-toggle='modal' data-target='#rulesModal'>Rules?</button>
-                        </div>
-                    </div>
-                    <!-- / start/restart and rules buttons -->
-
-                    <!-- Current Level Display -->
-                    <div class="row">
-                        <div class="col-md-12 level_container">
-                            <p id="level">Level '1'</p>
-                        </div>
-                    </div>
-                    <!-- / current level display -->
-
-                    <!-- Round Won/Lost Message -->
-                    <div class="row">
-                        <div class="col-md-12 round_message_container">
-                            <p id="message">Press 'Start' to begin!</p>
-                        </div>
-                    </div>
-                    <!-- / round won/lost message -->
-
-                    <!-- Game Buttons -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-md-12 buttons_container_1">
-                                    <img src="assets/images/yellow.png" id="yellow_button" class="img_buttons" alt="yellow button image" />
-                                    <img src="assets/images/blue.png" id="blue_button" class="img_buttons" alt="blue button image" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 buttons_container_2">
-                                    <img src="assets/images/red.png" id="red_button" class="img_buttons" alt="red button image" />
-                                    <img src="assets/images/green.png" id="green_button" class="img_buttons" alt="green button image" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- / game buttons -->
-
                 </div>
+                <div class="row">
+                    <div class="col-md-12 title_footer_container">
+                        <p>Memory Game</p>
+                    </div>
+                </div>
+                <!-- / main page header -->
+
+                <!-- Game Instructions -->
+                <div class="row">
+                    <div class="col-md-12 instructions_container d-none d-lg-block">
+                        <p>
+                            To play this game you must memorize the sequence in which the buttons flash (there is also a different pitch tone with every button to help this process). This game is based off of the very popular game 'Simon' but with a twist - the sequence is random
+                            every time!<br><br> Press 'Start' to begin the game, if you get the sequence correct the game will automatically move to the next level. If you get it wrong, the game will automatically restart from
+                            the same level, but with a different sequence. <br><br> Press 'Restart' to start back at level '1' with a brand new sequence!
+                        </p>
+                    </div>
+                </div>
+                <!-- / game instructions -->
+
+                <!-- Start/Restart and Rules Buttons -->
+                <div class="row">
+                    <div class="col-6 col-lg-12 start_restart_container">
+                        <button class="btn-default start_restart_button" id="start_button">Start</button>
+                    </div>
+                    <div class="col-6 d-lg-none rules_container">
+                        <button class="btn-default rules_button" data-toggle='modal' data-target='#rulesModal'>Rules?</button>
+                    </div>
+                </div>
+                <!-- / start/restart and rules buttons -->
+
+                <!-- Current Level Display -->
+                <div class="row">
+                    <div class="col-md-12 level_container">
+                        <p id="level">Level '1'</p>
+                    </div>
+                </div>
+                <!-- / current level display -->
+
+                <!-- Round Won/Lost Message -->
+                <div class="row">
+                    <div class="col-md-12 round_message_container">
+                        <p id="message">Press 'Start' to begin!</p>
+                    </div>
+                </div>
+                <!-- / round won/lost message -->
+
+                <!-- Game Buttons -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 buttons_container_1">
+                                <img src="assets/images/yellow.png" id="yellow_button" class="img_buttons" alt="yellow button image" />
+                                <img src="assets/images/blue.png" id="blue_button" class="img_buttons" alt="blue button image" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 buttons_container_2">
+                                <img src="assets/images/red.png" id="red_button" class="img_buttons" alt="red button image" />
+                                <img src="assets/images/green.png" id="green_button" class="img_buttons" alt="green button image" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / game buttons -->
+
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
 
     <!-- Modal -->
     <div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="rulesModal" aria-hidden="true">
@@ -124,7 +125,7 @@
         </div>
     </div>
     <!-- / modal -->
-    
+
     <!-- Audio -->
     <audio id="sound0" src="assets/audio/lowGNote.mp3"></audio>
     <audio id="sound1" src="assets/audio/CNote.mp3"></audio>
