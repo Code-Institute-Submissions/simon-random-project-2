@@ -101,7 +101,7 @@ body {
 }
 
 .start_restart_button {
-    font-size: 34px;
+    font-size: 32px;
     border: 4px dashed #fff;
     background-color: transparent;
     color: #fff;
@@ -115,11 +115,11 @@ body {
 .start_restart_button:hover,
 .start_restart_button:active,
 .start_restart_button:focus {
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .rules_button {
-    font-size: 34px;
+    font-size: 32px;
     border: 4px dashed #fff;
     background-color: transparent;
     color: #fff;
@@ -133,7 +133,7 @@ body {
 .rules_button:hover,
 .rules_button:active,
 .rules_button:focus {
-    font-size: 40px;
+    font-size: 36px;
 }
 
 #message {
