@@ -4,11 +4,11 @@
 
 #### Game Overview / Introduction
 
-The game consists of four different coloured buttons as convention with Simon games; yellow, blue, red and green.
+The game consists of four different coloured buttons as is the convention with Simon games; yellow, blue, red and green.
 When the user presses the start button a random sequence of button flashes will occur (1 flash at level 1), which
 the user will need to remember for their turn. As each buttons flashes it will also play a sound unique to that button.
 
-The start button is immediately replaced with a restart button, that allows the user to reset the game back to level 1.
+The start button is replaced with a restart button, that allows the user to reset the game back to level 1.
 Next to the start/restart button is a 'rules' button that once clicked will show a modal with game instructions (the amount
 of text is reduced on mobile). 
 
@@ -61,7 +61,7 @@ The .flash() function changes the button image source to a new image that is sli
 that makes sure the image switches back to the original after 400ms, which creates the effect of a 'flash'. A sound is also played through this function.
 
 The generateSequence() function starts by emptying the sequences array so that each time it is called, the array contains only the newly generated numbers.
-A for loop is used to generate a numbers between 0 and 3, depending on the current level (so level 3 would generate 3 numbers). The generated numbers
+A for loop is used to generate a sequence of numbers between 0 and 3, depending on the current level (so level 3 would generate 3 numbers). The generated numbers
 are then pushed into the 'sequences' array.
 
 The flashSequence() function contains the 'choice' variable which is equal to 'sequences[marker]', when first called is 'sequences[0]'. We then call the flash 
@@ -102,7 +102,7 @@ The restartGame() function is the same as startGame function, however it sets th
 jQuery is used to select the 'start_button' and attach an onclick handler. An if else statement is used to determine whether the 'start_button' 
 will call startGame or restartGame.
 
-The window.onload = (e) function creates four button images that the player can interact with as soon as the window has loaded.
+The window.onload() function creates four button images that the player can interact with as soon as the window has loaded.
 
 I created a flag called 'allowInput' which is used thoughtout the code to limit the input of the user at certain parts of the game.
 e.g.
@@ -161,10 +161,10 @@ e.g.
 - This front-end framework has multiple sections including CSS, components and JavaScript - which were all used within my code.
 
 ##### Google Fonts - https://fonts.google.com/
-- Used to include different font styles and font weights in the website. Specifically Indie Flower and Exo with a range of 100 - 700 font weights.
+- Used to include different font styles and font weights in the website. Specifically Roboto and Exo with a range of 100 - 700 font weights.
 
 ##### Jasmine Testing Frameworks - https://jasmine.github.io/
-- Used for the automation testing of all possible functions in the JavaScript code.
+- Used for the automation testing of all relevant functions in the JavaScript code.
 
 ##### Git/GitHub - https://github.com
 - Git was used as the version control system for commiting code to a local repository and pushing the code to a remote repository (in this case GitHub).
@@ -178,7 +178,7 @@ with a resolution of 320x568. To improve for my next project I will make sure to
 Using the Bootstrap grid system and media queries I was able to extend the css to target more specific screen sizes - more specifically the standard bootstrap breakpoints.
 As well as testing each new feature across all of the devices within the dev tool, I was testing the responsiveness at the the breakpoints using: min-width media queries (mobile-first).
 
-The game/website has been testing on a variety of desktop screens and mobile devices with little to no problems after the final build was implemented. Myself, my friends and family tested the game
+The game/website has been tested on a variety of desktop screens and mobile devices with little to no problems after the final build was implemented. Myself, my friends and family tested the game
 for bugs, which were then fixed.
 
 The website is tested to be fully responsive with the breakpoints:
@@ -190,12 +190,15 @@ The website is tested to be fully responsive with the breakpoints:
 The amount of testing that could be done using Jasmine was limited as the game is very simple and require a lot of user interaction.
 I was able to test: 
 - That the button object exists
-- That the generateSequence() function returned a number between 0 and 3
-- That the generateSequence() function returned a Number type variable
+- That the generateSequence() function generates a sequence of numbers between 0 and 3
+- That the generateSequence() function generates a sequence of numbers that are all the type of Number.
 
 The code for the testing can be found in the project repository or by clicking the link below:
+
 [Jasmine Testing](https://github.com/MatthewHopwood/simon-random-project-2/tree/master/assets/jasmine_testing)
+
 The proof of testing success can be found by clicking the link below:
+
 [Jasmine Test Success](https://github.com/MatthewHopwood/simon-random-project-2/tree/master/assets/jasmine_testing/images/jasmine_test_success.jpg)
 
 ##### Some common issues I had during testing
@@ -205,8 +208,8 @@ The proof of testing success can be found by clicking the link below:
 - jQuery source link was not working as it should be, so had to download the min.js file which fixed the problems.
 - Repeated an ID twice in HTML file so had to change one of them.
 - The audio files were playing on top of one another if the user pressed the buttons quicker than 1000ms apart so used the .currentTime = 0 method.
-- Jasmine testing was not working because the calc.js file contained the 'window.onload' function so had to move it to a script tag within the HTML file. The error was fixed
-- because the game was no longer being loaded when the window loaded, so the 'getElementById' and 'addEventListener' methods were no longer being called.
+- Jasmine testing was not working because the calc.js file contained the window.onload() function so had to embed it withing a script tag in the HTML file. The error was fixed
+because the game was no longer being loaded when the window loaded, so the 'getElementById' and 'addEventListener' methods were no longer being called.
 
 For the final testing of my code I put both the HTML and CSS throught the W3C validators.
 - https://validator.w3.org/ HTML.
@@ -231,13 +234,13 @@ GitHub website  - https://matthewhopwood.github.io/simon-random-project-2
 
 #### Media
 
-The sound files in this project were created the 'Audacity' software. I recorded myself playing different notes on a keyboard and cut them down to one second audio files, then exported them as an mp3 file which is supported across all browsers.
+The sound files in this project were created using the 'Audacity' software. I recorded myself playing different notes on a keyboard and cut them down to one second audio files, then exported them as an mp3 file which is supported across all browsers.
 
 The button images used in this project were created using 'Serif Plus' which is a vector art creation package.
 
 The background.jpg image was downloaded from 'Shutterstock.com' where I have a subscription allowing me to use the images in my work.
 
-Below I will list the additional assets I included:
+Below is a list of the assets used in my project:
 
 ##### Images
 
