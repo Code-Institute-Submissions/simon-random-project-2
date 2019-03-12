@@ -189,7 +189,7 @@ function roundOver(won)
     {
         gameInProgress = false;
         gameInProgress ? $("#start_button").hide() : $("#start_button").show();
-        displayMessage("Round over friend, try again!");
+        displayMessage("Round over friend, wait to try again! or press restart to go to level 1");
     } 
     else 
     {
