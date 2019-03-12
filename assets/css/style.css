@@ -131,7 +131,6 @@ body {
     -o-transition: all 0.7s ease-in-out;
 }
 
-
 /* --------------- Modal -------------- */
 
 .modal-content {
@@ -192,5 +191,15 @@ body {
 
     .rules_button {
         font-size: 45px;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 937px) {
+    .bg_image {
+        height: 100%;
+    }
+    
+    .opaque_overlay {
+        background-color: rgba(0, 0, 0, 0);
     }
 }

@@ -57,6 +57,8 @@ var gameState = false;
 // A flag that allows the user input at certain stages of the game.
 var allowInput = true;
 
+var gameInProgress = false;
+
 // Reuseable function to display current level at different stages.
 function displayLevel() 
 {
@@ -181,9 +183,12 @@ function endSequence()
 
 function roundOver(won) 
 {
+    
     sequenceOver = false;
     if (!won) 
     {
+        gameInProgress = false;
+        gameInProgress ? $("#start_button").hide() : $("#start_button").show();
         displayMessage("Round over friend, try again!");
     } 
     else 
@@ -193,14 +198,21 @@ function roundOver(won)
     }
     
     // Move to next round after 2s
+    var duration = 2000;
+    if (!won)
+    {
+        duration = 3500;
+    }
     setTimeout(function() {
         startGame();
-    }, 2000);
+    }, duration);
     
 }
 
 function startGame() 
 {
+    gameInProgress = true;
+    gameInProgress ? $("#start_button").hide() : $("#start_button").show();
     marker = 0;
     displayLevel();
     displayMessage("Remember the sequence!")
@@ -214,6 +226,8 @@ function startGame()
 
 function restartGame() 
 {
+    gameInProgress = true;
+    gameInProgress ? $("#start_button").hide() : $("#start_button").show();
     marker = 0;
     level = 1;  // Sets the level back to 1 
     displayLevel(); 
@@ -225,7 +239,7 @@ function restartGame()
 }
 
 $("#start_button").on("click", function() {
-    if (!allowInput) // The user cannot click the button unless allowInput == true
+    if (gameInProgress) // The user cannot click the button unless allowInput == true
     {
         return;
     }

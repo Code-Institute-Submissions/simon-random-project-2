@@ -2,7 +2,7 @@
 
 ## [Link to my website](https://matthewhopwood.github.io/simon-random-project-2/) 
 
-#### Game Overview
+#### Game Overview / Introduction
 
 The game consists of four different coloured buttons as convention with Simon games; yellow, blue, red and green.
 When the user presses the start button a random sequence of button flashes will occur (1 flash at level 1), which
@@ -17,7 +17,25 @@ input the same sequence (by clicking the corresponding colored buttons).Every ti
 the level will increment by 1 and the sequence will become longer by 1. If the user get the sequence wrong, the level 
 will automatically restart with a new random sequence but at the same level difficulty.
 
+Below is a link to some In-game images:
+
+[In-game Images](https://github.com/MatthewHopwood/simon-random-project-2/tree/master/assets/game_images)
+
 ## UX
+The website was designed with the aim of fitting the whole game on a single screen without scrolling (100 viewport height) in a portrait orientation. As an improvement for next time
+I would make sure the layout focuses on both portrait and landscape orientations. 
+
+The background used is quite simple so that is does not interfere with visuals of the game, but is also not so plain
+that it is boring to look at. The button images are big, bright and colorful on all screen sizes as they are the focus of the game. After experimenting with different colours for the font
+I chose white to be the most readable and aesthically pleasing to the eye. 
+
+As the focus of this website is the game itself, I decided to reduce the visual clutter by putting any information about the game in a modal which is activated by pressing the 'Rules' button.
+
+A mobile first appoach was used as the majority of todays internet browsing is done through mobile, with the website being fully responsive to multiple resolutions (browers sizes)
+and a wide range of mobile devices from the Iphone5/SE through to the Ipad. 
+
+Before undertaking full blown development of the project, I took advantage of a free trial wireframe package called 'MarvelApp'. I used this to create
+mock-ups for both a general desktop and mobile-sized device. You can see these by following the link to my wireframes folder below:
 
 [Wireframes Folder](https://github.com/MatthewHopwood/simon-random-project-2/tree/master/assets/wireframes)
 
@@ -118,6 +136,10 @@ e.g.
 
 
 ### Features Left to Implement
+- Leaderboard system that could be added that constantly updates itself when users play the game.
+- Better optimisation for landscape view on all devices. 
+- Choice of themes for the games that replaces graphics and sounds, e.g. Farm animal face buttons and the corresponding sound.
+- Reduce 'empty space' for all devices.
 
 
 
@@ -138,34 +160,50 @@ e.g.
 ##### Google Fonts - https://fonts.google.com/
 - Used to include different font styles and font weights in the website. Specifically Indie Flower and Exo with a range of 100 - 700 font weights.
 
-##### Font Awesome - https://fontawesome.com/
-- Used to include meaningful and representative images/icons to the website. E.g a ticket icon on the events page. 
-
-##### Hover.css - https://cdnjs.com/
-- Used in an earlier version of the landing page, which was then scrapped later in development. It was used to add an interactive hover style
-when hovering over the navbar buttons.
+##### Jasmine Testing Frameworks - https://jasmine.github.io/
+- Used for the automation testing of all possible functions in the JavaScript code.
 
 ##### Git/GitHub - https://github.com
 - Git was used as the version control system for commiting code to a local repository and pushing the code to a remote repository (in this case GitHub).
 
 ## Testing
 
-
 ##### Mobile first approach and Responsive design
 It is important to mention that as it was being developed with a mobile-first approach in mind, that all of the css is aimed at the smallest device which is the Iphone5/SE
-with a resolution of 320x568. 
+with a resolution of 320x568. To improve for my next project I will make sure to include design for landscape, however this game was intended for portrait users.
 
 Using the Bootstrap grid system and media queries I was able to extend the css to target more specific screen sizes - more specifically the standard bootstrap breakpoints.
 As well as testing each new feature across all of the devices within the dev tool, I was testing the responsiveness at the the breakpoints using: min-width media queries (mobile-first).
+
+The game/website has been testing on a variety of desktop screens and mobile devices with little to no problems after the final build was implemented. Myself, my friends and family tested the game
+for bugs, which were then fixed.
 
 The website is tested to be fully responsive with the breakpoints:
 - min-width: 768px (sm)
 - min-wdith: 992px (md)
 - min-width: 1200px (lg)
- 
+
+##### Automation tesing using Jasmine Testing Frameworks
+The amount of testing that could be done using Jasmine was limited as the game is very simple and require a lot of user interaction.
+I was able to test: 
+- That the button object exists
+- That the generateSequence() function returned a number between 0 and 3
+- That the generateSequence() function returned a Number type variable
+
+The code for the testing can be found in the project repository or by clicking the link below:
+[Jasmine Testing](https://github.com/MatthewHopwood/simon-random-project-2/tree/master/assets/jasmine_testing)
+The proof of testing success can be found by clicking the link below:
+[Jasmine Test Success](https://github.com/MatthewHopwood/simon-random-project-2/tree/master/assets/jasmine_testing/images/jasmine_test_success.jpg)
+
 ##### Some common issues I had during testing
-- padding had to be reduced on some elements as screen sizes increased.
-- 
+- The padding and font size had to be reduced on some elements as screen sizes increased/decreased to fit 100% viewport height.
+- The functions working incorrectly.
+- User input was interfering with the functionality of the game.
+- jQuery source link was not working as it should be, so had to download the min.js file which fixed the problems.
+- Repeated an ID twice in HTML file so had to change one of them.
+- The audio files were playing on top of one another if the user pressed the buttons quicker than 1000ms apart so used the .currentTime = 0 method.
+- Jasmine testing was not working because the calc.js file contained the 'window.onload' function so had to move it to a script tag within the HTML file. The error was fixed
+- because the game was no longer being loaded when the window loaded, so the 'getElementById' and 'addEventListener' methods were no longer being called.
 
 For the final testing of my code I put both the HTML and CSS throught the W3C validators.
 - https://validator.w3.org/ HTML.
@@ -173,7 +211,7 @@ For the final testing of my code I put both the HTML and CSS throught the W3C va
 
 The CSS came back with no errors found.
 
-The HTML came back with a few errors, some that I managed to correct, however some errors require the use of JavaScript such as polyfill. This is outside of the scope of this project critera so I have left these errors.
+The HTML came back with no errors found.
 
 ## Deployment
 
@@ -183,41 +221,51 @@ Before doing this I had to create a repository on GitHub and once I had pushed t
 
 You can run this code locally by downloading the repository on GitHub - this can be done by pressing the green button that says 'Clone or download' and the select 'download as zip', then you would extract the files so they can be opened in a local IDE.
 
-GitHub website  - https://matthewhopwood.github.io/the-monkees-project/
+GitHub website  - https://matthewhopwood.github.io/simon-random-project-2 
 
 ## Credits
 #### Content
 
-
 #### Media
 
+The sound files in this project were created the 'Audacity' software. I recorded myself playing different notes on a keyboard and cut them down to one second audio files, then exported them as an mp3 file which is supported across all browsers.
 
+The button images used in this project were created using 'Serif Plus' which is a vector art creation package.
 
-##### Images
-
-
-
-##### Audio 
-
+The background.jpg image was downloaded from 'Shutterstock.com' where I have a subscription allowing me to use the images in my work.
 
 Below I will list the additional assets I included:
 
 ##### Images
 
-- assets/own-images/clarksville-cover.jpg
-- assets/own-images/cover1.jpg
-- assets/own-images/cover4.jpg
-- assets/own-images/cover6.jpg
-- assets/own-images/daydreamBeliever-cover.jpg
-- assets/own-images/group1.jpg
-- assets/own-images/group2.jpg
-- assets/own-images/group3.jpg
-- assets/own-images/group4.jpg
-- assets/own-images/md3.jpg
-- assets/own-images/steppingStone-cover.jpg
+- assets/images/background.jpg
+- assets/images/blue.png
+- assets/images/blue_glow.png
+- assets/images/green.png
+- assets/images/green_glow.png
+- assets/images/red.png
+- assets/images/red_glow.png
+- assets/images/yellow.png
+- assets/images/yellow_glow.png
+
+##### Audio 
+
+- assets/audio/CNote.mp3
+- assets/audio/ENote.mp3
+- assets/audio/highGNote.mp3
+- assets/audio/lowGNote.mp3
 
 #### Acknowledgements
-The inspiration for the general design of my website are mini-projects completed through code-institute. Examples of these can be found below:
+The game is based off the original 'Simon' games which is a very popular memory game franchise. I used the same colors and sounds(pitch) as 2014 version of Simon called Simon Swipe.
+
+I have created previous games (only very simple) using JavaScript and HTML5 prior to this course, so already understood a fair amount of the logic needed to create this game.
+
+The inspiration for the general design of my website are mini-projects completed through code-institute. 
+
+Examples of these can be found below:
 
 - https://matthewhopwood.github.io/resume-project/
 - https://matthewhopwood.github.io/bootstrap-responsive/
+- https://en.wikipedia.org/wiki/Simon_(game)
+
+I also changed some of the layout to fit better on smaller screens after receiving feedback from multiple members of the Slack community, friends and family.
