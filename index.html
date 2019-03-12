@@ -122,10 +122,20 @@
     <!-- / audio -->
 
     <!-- Script Sources -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/calc.js"></script>
     <!-- / script sources -->
+
+    <script>
+        window.onload = function(e) {
+            // Create the four image buttons that the player can interact with
+            buttons.push(new button(0, "yellow"));
+            buttons.push(new button(1, "blue"));
+            buttons.push(new button(2, "red"));
+            buttons.push(new button(3, "green"));
+        };
+    </script>
 
 </body>
 

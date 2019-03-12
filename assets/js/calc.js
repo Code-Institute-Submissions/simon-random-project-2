@@ -1,3 +1,4 @@
+
 /*
     Below is the basic logical flow of the game:
 
@@ -241,12 +242,3 @@ $("#start_button").on("click", function() {
     }
     $(".img_buttons").addClass('cursor_pointer');
 });
-
-window.onload = function(e) 
-{
-    // Create the four image buttons that the player can interact with
-    buttons.push(new button(0, "yellow"));
-    buttons.push(new button(1, "blue"));
-    buttons.push(new button(2, "red"));
-    buttons.push(new button(3, "green"));
-};
