@@ -151,6 +151,9 @@ e.g.
 ##### CSS3
 - Used to create custom styling for each of the elements within the html document. Usually found in a external .css file.
 
+##### JavaScript
+- Used to create and implent the logic within the site/game, using functions, objects, methods and varibales. Found in an external .js file and embedded in the html file. 
+
 ##### JQuery  - http://code.jquery.com/
 - This is a small, fast JavaScript library that was used specifically for adding js functionality to the modals and burger-icon.
 
