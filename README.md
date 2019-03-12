@@ -1,10 +1,4 @@
-
-
-
-#### Logic Overview
-
-
-    # Simon Random Memory Game (Milestone Project 2 | Code Institute)
+# Simon Random Memory Game (Milestone Project 2 | Code Institute)
 
 ## [Link to my website](https://matthewhopwood.github.io/simon-random-project-2/) 
 
@@ -30,6 +24,8 @@ will automatically restart with a new random sequence but at the same level diff
 ## Features / Logic
 
 ### Existing Features / Logic
+
+#### Logic Overview
 
 I created an array of 'button' objects that consist of the four colored button images the user can see on screen. I gave each button
 a color and an ID number so they could be selected easily later on. The buttons have a flash and a pressed function. They also have a flag
